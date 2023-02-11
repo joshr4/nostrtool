@@ -7,5 +7,7 @@ async function loadPubkeyNIP07() {
     }
 
     const publicKey = await window.nostr.getPublicKey()
+
+    clearPKDisplayFields()
     document.getElementById("pubkey_npub").value = publicKey;
 }
