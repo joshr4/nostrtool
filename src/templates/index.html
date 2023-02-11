@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>NostrTool</title>
         <script src="/static/nostr_tool.js"></script>
+        <script src="/static/nip07.js"></script>
         <link rel="stylesheet" href="/static/styles.css">
 
         <!-- Google Fonts -->
@@ -34,6 +35,7 @@
                             <input onclick="createNewPK('bip39_24');" type="button" value="From random BIP-39 24-word mnemonic" ><br/>
                         </div>
                         <div class="float_options">
+                            <input onclick="loadPubkeyNIP07();" type="button" value="Load pubkey from extension (NIP-07)" ><br/>
                             <input onclick="prepareLoadPK('existing');" type="button" value="Load an existing key" ><br/>
                             <input onclick="prepareLoadPK('bip39');" type="button" value="Load an existing key from BIP-39 mnemonic" ><br/>
                         </div>
@@ -125,7 +127,8 @@
                         <input id="nip26_create_valid_until" type="date">
                     </div>
 
-                    <input onclick="nip26CreateAndSign();" type="button" value="Sign delegation" >
+                    <input onclick="nip26CreateAndSign();" type="button" value="Sign delegation1" >
+                    <input onclick="nip26SignWithNip7('nip26_raw_delegation_token');" type="button" value="Sign delegation with extension (NIP-07)" >
                 </div>
 
 
